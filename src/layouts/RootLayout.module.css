@@ -1,0 +1,10 @@
+.full-size-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.restricted-size-container {
+    display: flex;
+    justify-content: center;
+}
