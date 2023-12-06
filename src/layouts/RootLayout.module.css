@@ -7,4 +7,6 @@
 .restricted-size-container {
     display: flex;
     justify-content: center;
+    max-width: 600px;
+    width: 100%;
 }

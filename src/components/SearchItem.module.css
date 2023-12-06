@@ -1,0 +1,39 @@
+.search-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  background-color: var(--dark-main-color);
+  cursor: pointer;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.content img {
+  width: 5rem;
+}
+
+.content .city-time {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.city-time .city-name {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.city-time .time {
+    font-size: 1.3rem;
+    color: var(--gray-color);
+}
+
+.temperature {
+  font-size: 3rem;
+}

@@ -1,0 +1,12 @@
+.header {
+    font-size: 1.5rem;
+    color: var(--gray-color);
+    margin-top: 4rem;
+}
+
+.search-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}

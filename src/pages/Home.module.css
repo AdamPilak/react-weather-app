@@ -15,7 +15,7 @@
     animation-fill-mode: forwards;
 }
 
-img {
+.home-container img {
 	width: 30rem;
 	animation: float 6s linear infinite;
 }
@@ -26,12 +26,12 @@ img {
 	flex-direction: column;
 }
 
-h1 {
+.home-text h1 {
 	font-size: 9rem;
 	letter-spacing: 1px;
 }
 
-h2 {
+.home-text h2 {
 	font-size: 3rem;
 	font-weight: 400;
 	color: var(--gray-color);
