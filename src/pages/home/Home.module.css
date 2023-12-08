@@ -1,43 +1,43 @@
-.home-container {
+.home {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
 	align-items: center;
 }
 
-.home-container.fade-in {
+.home.fade-in {
 	animation: fade-out 1s ease-in reverse;
     animation-fill-mode: forwards;
 }
 
-.home-container.fade-out {
+.home.fade-out {
     animation: fade-out 1s ease;
     animation-fill-mode: forwards;
 }
 
-.home-container img {
+.home img {
 	width: 30rem;
 	animation: float 6s linear infinite;
 }
 
-.home-text {
+.title {
 	display: flex;
 	text-align: center;
 	flex-direction: column;
 }
 
-.home-text h1 {
+.title h1 {
 	font-size: 9rem;
 	letter-spacing: 1px;
 }
 
-.home-text h2 {
+.title h2 {
 	font-size: 3rem;
 	font-weight: 400;
 	color: var(--gray-color);
 }
 
-.home-btn {
+.enter-btn {
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -54,11 +54,11 @@
 	transition: color 0.5s;
 }
 
-.home-btn:hover {
+.enter-btn:hover {
 	color: var(--contrast-color);
 }
 
-.home-btn::before {
+.enter-btn::before {
 	content: "";
 	position: absolute;
 	left: 0;
@@ -68,11 +68,11 @@
 	transition: width 0.5s;
 }
 
-.home-btn:hover::before {
+.enter-btn:hover::before {
 	width: 100%;
 }
 
-.home-btn > i {
+.enter-btn > i {
 	font-size: 2.5rem;
 	z-index: 1;
 }

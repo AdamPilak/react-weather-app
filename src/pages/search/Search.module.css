@@ -1,11 +1,11 @@
-.search-container {
+.search {
     width: 100%;
 }
 
-.search {
+.search Form {
     display: flex;
     gap: 2rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
 
 .search input {
@@ -17,7 +17,7 @@
     border-radius: 1rem;
 }
 
-.search button {
+.cancel-btn {
     color: var(--text-color);
     background: transparent;
     font-weight: bold;

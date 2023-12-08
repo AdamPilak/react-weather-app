@@ -1,5 +1,5 @@
 import styles from "./Home.module.css"
-import umbrella from "../assets/images/umbrella.png"
+import umbrella from "../../assets/images/umbrella.png"
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 
@@ -21,18 +21,18 @@ export function Home() {
 	return (
 		<div
 			onAnimationEnd={handleAnimationEnd}
-			className={`${styles["home-container"]} ${isAnimating ? styles[`${animation}`] : ""}`}
+			className={`${styles.home} ${isAnimating ? styles[`${animation}`] : ""}`}
 		>
 			<img
 				src={umbrella}
 				alt="blue umbrella"
 			/>
-			<div className={styles["home-text"]}>
+			<div className={styles.title}>
 				<h1>Breeze</h1>
 				<h2>Weather App</h2>
 			</div>
 			<button
-				className={styles["home-btn"]}
+				className={styles["enter-btn"]}
 				onClick={() => setIsAnimating(true)}
 			>
 				<i className="fa-solid fa-arrow-right"></i>

@@ -1,14 +1,14 @@
 :root {
-	--dark-bg-color: #0b121e;
-	--dark-main-color: #202b3c;
-	--white-color: #F1F1F1;
-	--gray-color: #8A919D;
-  --contrast-color: #0094DA;
+	--dark-bg-color: #0B131E;
+	--dark-main-color: #202b3b;
+	--white-color: #f1f1f1;
+	--gray-color: #8a919d;
+	--contrast-color: #0094da;
 }
 
 ::selection {
-  color: var(--dark-bg-color);
-  background: var(--contrast-color);
+	color: var(--dark-bg-color);
+	background: var(--contrast-color);
 }
 
 * {
@@ -23,11 +23,11 @@
 }
 
 html {
-  font-size: 62.5%;
-  overflow-x: hidden;
+	font-size: 62.5%;
+	overflow-x: hidden;
 }
 
 body {
-  color: var(--white-color);
-  background-color: var(--dark-bg-color);
+	color: var(--white-color);
+	background-color: var(--dark-bg-color);
 }
