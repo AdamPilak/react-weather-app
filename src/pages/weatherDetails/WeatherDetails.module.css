@@ -1,0 +1,62 @@
+.container {
+    width: 100%;
+    position: relative;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header h1 {
+    color: var(--gray-color);
+    font-weight: 500;
+}
+
+.header a {
+    position: absolute;
+    left: 0;
+    color: var(--white-color);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.main-info {
+    height: 40rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.main-info .header {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+}
+
+.city {
+    font-size: 4rem;
+    font-weight: 500;
+}
+
+.weather-description {
+    font-size: 2rem;
+    color: var(--gray-color);
+}
+
+.main-info img {
+    width: 20rem;
+}
+
+.temperature {
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+.detailed-info {
+    background: red;
+}
+

@@ -4,6 +4,7 @@
 	--white-color: #f1f1f1;
 	--gray-color: #8a919d;
 	--contrast-color: #0094da;
+	--container-padding: 3rem;
 }
 
 ::selection {
@@ -30,4 +31,16 @@ html {
 body {
 	color: var(--white-color);
 	background-color: var(--dark-bg-color);
+}
+
+@media (max-width: 1200px) {
+	html {
+		font-size: 55%;
+	}
+}
+
+@media (max-width: 520px) {
+	html {
+		font-size: 50%;
+	}
 }

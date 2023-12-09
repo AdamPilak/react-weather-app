@@ -1,14 +1,13 @@
-.search {
+.search-container {
     width: 100%;
 }
 
-.search Form {
+.search-container Form {
     display: flex;
     gap: 2rem;
-    margin-top: 3rem;
 }
 
-.search input {
+.search-container input {
     width: 100%;
     max-width: 1000px;
     background-color: var(--dark-main-color);
@@ -22,4 +21,63 @@
     background: transparent;
     font-weight: bold;
     cursor: pointer;
+}
+
+/* search list */
+
+.header {
+    font-size: 1.5rem;
+    color: var(--gray-color);
+    margin-top: 3rem;
+}
+
+.search-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+/* search item */
+
+.search-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.5rem;
+	border-radius: 1.5rem;
+	background-color: var(--dark-main-color);
+	cursor: pointer;
+}
+
+.content {
+	display: flex;
+	align-items: center;
+	gap: 3rem;
+}
+
+.content img {
+	width: 5rem;
+}
+
+.city-time {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.city-name {
+	font-size: 2rem;
+	font-weight: 500;
+	color: var(--white-color);
+}
+
+.time {
+	font-size: 1.3rem;
+	color: var(--gray-color);
+}
+
+.temperature {
+	font-size: 2.5rem;
+	color: var(--white-color);
 }

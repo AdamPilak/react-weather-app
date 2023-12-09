@@ -1,8 +1,7 @@
 import { useEffect, useRef } from "react"
-import { SearchList } from "../../components/searchList/SearchList"
 import styles from "./Search.module.css"
 import { Weather, getWeather } from "../../api/weather"
-import { Form, useLoaderData } from "react-router-dom"
+import { Form, Link, useLoaderData } from "react-router-dom"
 
 export function Search() {
 	const {
@@ -18,7 +17,7 @@ export function Search() {
 	}, [query])
 
 	return (
-		<div className={styles.search}>
+		<div className={styles['search-container']}>
 			<Form>
 				<input
 					type="text"
@@ -79,4 +78,47 @@ async function loader({ request: { signal, url } }: SearchLoaderParams): Promise
 export const searchRoute = {
 	loader,
 	element: <Search />,
+}
+
+type SearchListProps = {
+	header: string
+	weathers: Weather[]
+}
+
+export function SearchList({ header, weathers }: SearchListProps) {
+	return (
+		<>
+			<div className={styles["header"]}>{weathers.length > 0 ? header : `No ${header.toLowerCase()}`}</div>
+			<ul className={styles["search-list"]}>
+				{weathers.map(weather => (
+					<SearchItem weather={weather}></SearchItem>
+				))}
+			</ul>
+		</>
+	)
+}
+
+type SearchItemProps = {
+	weather: Weather
+}
+
+export function SearchItem({ weather }: SearchItemProps) {
+	return (
+		<Link to={`/${weather.location.name}`}>
+			<div className={styles["search-item"]}>
+				<div className={styles.content}>
+					<img
+						src={weather.current?.condition?.icon}
+						alt="current weather image"
+						className={styles["weather-img"]}
+					/>
+					<div className={styles["city-time"]}>
+						<h2 className={styles["city-name"]}>{weather.location?.name}</h2>
+						<div className={styles.time}>{weather.location?.localtime.split(" ")[1]}</div>
+					</div>
+				</div>
+				<span className={styles.temperature}>{weather.current?.temp_c}°C</span>
+			</div>
+		</Link>
+	)
 }
