@@ -1,20 +1,26 @@
 .container {
     width: 100%;
     position: relative;
+    padding-bottom: var(--container-padding);
 }
 
-.header {
+.navigation {
+    position: sticky;
+    top: 0;
+    padding-top: var(--container-padding);
+    background-color: var(--dark-bg-color);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.header h1 {
+.navigation h1 {
     color: var(--gray-color);
     font-weight: 500;
+    font-size: 2rem;
 }
 
-.header a {
+.navigation a {
     position: absolute;
     left: 0;
     color: var(--white-color);
@@ -23,40 +29,64 @@
 }
 
 .main-info {
-    height: 40rem;
+    height: 37rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin-top: 5rem;
+    margin: 7rem 0;
 }
 
 .main-info .header {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: .75rem;
 }
 
 .city {
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: 500;
 }
 
 .weather-description {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: var(--gray-color);
 }
 
 .main-info img {
-    width: 20rem;
+    width: 15rem;
 }
 
 .temperature {
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: bold;
 }
 
 .detailed-info {
-    background: red;
+    list-style: none;
+    display: grid;
+    grid-template-columns: calc(50% - 1rem) calc(50% - 1rem);
+    column-gap: 2rem;
+    row-gap: 2rem;
 }
 
+.detailed-info-item {
+    display: grid;
+    flex-direction: column;
+    padding: 2rem;
+    background-color: var(--dark-main-color);
+    border-radius: 1.5rem;
+    gap: 1rem;
+}
+
+.detailed-info-item .label {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--gray-color);
+}
+
+.detailed-info-item .value {
+    font-size: 2.6rem;
+    font-weight: bold;
+}

@@ -117,7 +117,7 @@ export function SearchItem({ weather }: SearchItemProps) {
 						<div className={styles.time}>{weather.location?.localtime.split(" ")[1]}</div>
 					</div>
 				</div>
-				<span className={styles.temperature}>{weather.current?.temp_c}°C</span>
+				<span className={styles.temperature}>{weather.current?.temp_c}°</span>
 			</div>
 		</Link>
 	)
