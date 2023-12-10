@@ -1,13 +1,15 @@
 import { useEffect, useRef } from "react"
 import styles from "./Search.module.css"
 import { Weather, getWeather } from "../../api/weather"
-import { Form, Link, useLoaderData } from "react-router-dom"
+import { Form, Link, useLoaderData, useSubmit } from "react-router-dom"
 
 export function Search() {
 	const {
 		result,
 		searchParams: { query },
 	} = useLoaderData() as SearchLoaderData
+
+	const submit = useSubmit()
 
 	const queryRef = useRef<HTMLInputElement>(null)
 	// const [recentlyViewed, setRecentlyViewed] = useState()
@@ -17,8 +19,12 @@ export function Search() {
 	}, [query])
 
 	return (
-		<div className={styles['search-container']}>
-			<Form>
+		<div className={styles["search-container"]}>
+			<Form
+				onChange={event => {
+					submit(event.currentTarget)
+				}}
+			>
 				<input
 					type="text"
 					name="query"
@@ -91,7 +97,7 @@ export function SearchList({ header, weathers }: SearchListProps) {
 			<div className={styles["header"]}>{weathers.length > 0 ? header : `No ${header.toLowerCase()}`}</div>
 			<ul className={styles["search-list"]}>
 				{weathers.map(weather => (
-					<SearchItem weather={weather}></SearchItem>
+					<SearchItem key={weather.location.name} weather={weather}></SearchItem>
 				))}
 			</ul>
 		</>

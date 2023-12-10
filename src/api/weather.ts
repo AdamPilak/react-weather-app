@@ -60,6 +60,7 @@ export function getWeather(query: string, options: AxiosRequestConfig): Promise<
   return baseApi
     .get<Weather>(`/current.json?key=a0c075ba8c1d4078baf165547230512&q=${query}`, options)
     .then((res) => res.data).catch((err: AxiosError) => {
+      // console.clear()
       if (err.request.status === 400) return err.request.status
     })
 }
