@@ -50,6 +50,11 @@ export type Location = {
 }
 
 export function getWeather(query: string, options: AxiosRequestConfig): Promise<Weather | number> {
+
+    options.headers = {
+      'Content-Type': 'application/json'
+    }
+
   return baseApi
     .get<Weather>(`/current.json?key=a0c075ba8c1d4078baf165547230512&q=${query}`, options)
     .then((res) => res.data).catch((err: AxiosError) => {

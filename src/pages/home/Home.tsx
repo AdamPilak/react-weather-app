@@ -5,7 +5,7 @@ import { useState } from "react"
 
 export function Home() {
 	const [animation, setAnimation] = useState("fade-in")
-	const [isAnimating, setIsAnimating] = useState(true)
+	const [isAnimating, setIsAnimating] = useState<boolean>()
 	const [isAfterFirstAnimation, setIsAfterFirstAnimation] = useState(false)
 	const navigate = useNavigate()
 
