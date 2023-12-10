@@ -52,7 +52,8 @@ export type Location = {
 export function getWeather(query: string, options: AxiosRequestConfig): Promise<Weather | number> {
 
     options.headers = {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Methods': 'GET'
     }
 
   return baseApi
