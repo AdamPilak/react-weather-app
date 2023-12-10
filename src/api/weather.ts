@@ -53,7 +53,8 @@ export function getWeather(query: string, options: AxiosRequestConfig): Promise<
 
     options.headers = {
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Methods': 'GET'
+      'Access-Control-Allow-Origin': '*',
+      "Access-Control-Allow-Headers": "X-Requested-With"
     }
 
   return baseApi
