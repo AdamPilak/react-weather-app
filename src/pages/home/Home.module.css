@@ -3,16 +3,18 @@
 	flex-direction: column;
 	justify-content: space-evenly;
 	align-items: center;
+	gap: 5rem;
+	padding: var(--container-padding) 0;
 }
 
 .home.fade-in {
 	animation: fade-out 1s ease-in reverse;
-    animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
 }
 
 .home.fade-out {
-    animation: fade-out 1s ease;
-    animation-fill-mode: forwards;
+	animation: fade-out 1s ease;
+	animation-fill-mode: forwards;
 }
 
 .home img {
@@ -78,12 +80,12 @@
 }
 
 @keyframes fade-out {
-    100% {
+	100% {
 		transform: translateX(-100vw);
 	}
-    50% {
+	50% {
 		transform: translateX(10vw);
-    }
+	}
 }
 
 @keyframes float {
