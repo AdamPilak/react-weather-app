@@ -46,8 +46,8 @@ export function WeatherDetails() {
 			</div>
 
 			<ul className={styles["detailed-info"]}>
-				{DETAILED_INFO.map(item => (
-					<li className={styles["detailed-info-item"]}>
+				{DETAILED_INFO.map((item, index) => (
+					<li key={index} className={styles["detailed-info-item"]}>
 						<span className={styles.label}>{item.label}</span>
 						<span className={styles.value}>
 							{item.value} {item.unit}

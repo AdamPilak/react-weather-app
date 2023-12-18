@@ -15,7 +15,8 @@ type RecentlyViewedProviderProps = {
 export function RecentlyViewedProvider({ children }: RecentlyViewedProviderProps) {
   const {getRecentlyViewed, addRecentlyViewed} = useRecentlyViewed(
     'RECENTLY_VIEWED',
-    []
+    [],
+    4
   )
 
   return (

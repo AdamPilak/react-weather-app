@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Weather, getWeather } from "../api/weather"
 
-export function useRecentlyViewed(key: string, initialValue: string[]) {
+export function useRecentlyViewed(key: string, initialValue: string[], limit: number) {
 	const [recentlyViewedNames, setRecentlyViewedNames] = useState<string[]>(() => {
 		const localStorageValue = localStorage.getItem(key)
 
@@ -11,7 +11,21 @@ export function useRecentlyViewed(key: string, initialValue: string[]) {
 	})
 
 	function addRecentlyViewed(name: string) {
-		setRecentlyViewedNames(v => [name, ...v])
+		const duplicate = recentlyViewedNames.find(n => n === name)
+
+		if (duplicate == null) {
+			setRecentlyViewedNames(v => {
+				if (recentlyViewedNames.length === limit) {
+					v.pop()
+				}
+				return [name, ...v]
+			})
+		} else {
+			setRecentlyViewedNames(v => {
+				const filteredNames = v.filter(n => n !== name)
+				return [name, ...filteredNames]
+			})
+		}
 	}
 
 	async function getRecentlyViewed() {
