@@ -71,7 +71,7 @@ async function loader({
   const result = [] as Weather[]
 
   if (query !== '') {
-    const response = await getWeather(query, { signal })
+    const response = await getWeather(query, signal)
     if (typeof response !== 'number') result.push(response)
   }
 
