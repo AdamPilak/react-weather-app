@@ -49,16 +49,16 @@ export type Location = {
   localtime: string;
 }
 
-export function getWeather(query: string, options: AxiosRequestConfig): Promise<Weather | number> {
+export function getWeather(query: string, options?: AxiosRequestConfig): Promise<Weather | number> {
 
-    options.headers = {
+    const headers = {
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*',
       "Access-Control-Allow-Headers": "X-Requested-With"
     }
 
   return baseApi
-    .get<Weather>(`/current.json?key=a0c075ba8c1d4078baf165547230512&q=${query}`, options)
+    .get<Weather>(`/current.json?key=a0c075ba8c1d4078baf165547230512&q=${query}`, {headers})
     .then((res) => res.data).catch((err: AxiosError) => {
       // console.clear()
       if (err.request.status === 400) return err.request.status
